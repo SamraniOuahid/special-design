@@ -4,6 +4,32 @@
 body{
     font-family: "Open Sans", sans-serif;
 }
+.setting-box{
+    z-index: 1000;
+    width: 200px;
+    min-height: 100vh;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: -200px;
+    transition: 0.3s;
+}
+.open{
+    left: 0;
+}
+.setting-box .fa-gear{
+    position: absolute;
+    right: -30px;
+    top: 100px;
+    background-color: #fff;
+    padding: 8px 0;
+    width: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+.setting-box .setting-content{
+
+}
 /* landing pages */
 .landing-page{
     min-height: 100vh;

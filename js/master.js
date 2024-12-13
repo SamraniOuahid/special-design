@@ -11,3 +11,11 @@ setInterval(()=>{
     // change bg imgs url
 landingPage.style.backgroundImage = `url('imgs/${imgArray[randomNumber]}')`;
 },6000 )
+
+
+// select setting
+let settingBox = document.querySelector('.setting-box')
+function myfunction(){
+    settingBox.classList.add('.open')   
+    console.log('click')
+}
