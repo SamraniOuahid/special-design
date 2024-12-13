@@ -1,0 +1,81 @@
+:root{
+    --main-color:#ff5e09;
+}
+body{
+    font-family: "Open Sans", sans-serif;
+}
+/* landing pages */
+.landing-page{
+    min-height: 100vh;
+    background-image: url('../imgs/b1.jpg');
+    background-size: cover;
+    position: relative;
+    transition: 0.3s ease;
+}
+.landing-page .overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgb(0 0 0 / 70%);
+    z-index: 1;
+}
+.landing-page .header-area{
+    position: relative;
+    z-index: 2;
+    color: white;
+    display: flex;
+    justify-content: space-between; 
+    padding: 10px;
+
+}
+.landing-page .header-area .logo{
+    padding: 15px;
+    width: 300px;
+    font-size: 19px;
+    font-weight: bold;
+}
+.landing-page .header-area ul{
+    list-style: none;
+    padding-left: 0;
+    padding-right: 30px;
+    width: 100%;
+    text-align: right;
+}
+.landing-page .header-area ul li{
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 15px;
+}
+.landing-page .header-area ul li a{
+    text-decoration: none;
+    color: white;
+    transition: 0.3s ease;
+
+}
+.landing-page .header-area ul li a:hover,
+.landing-page .header-area ul li .active {
+    color: var(--main-color);
+    
+}
+.landing-page .introduction-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    color: white;
+    /* width: 100%; */
+    text-align: center;
+}
+.landing-page .introduction-text h1{
+    font-size: 35px;
+}
+.landing-page .introduction-text span{
+    color: var(--main-color);
+}
+.landing-page .introduction-text p{
+    line-height: 1.5;
+    font-size: 17px;
+}
