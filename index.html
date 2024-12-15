@@ -18,10 +18,33 @@
 <body>
 
     <!-- setting box -->
-    <div onclick="myfunction()" class="setting-box">
-        <i class="fa fa-gear"></i>
+    <div  class="setting-box">
+        <div class="setting-toglle">
+            <i class="fa fa-gear"></i>
+        </div>
         <div class="setting-content">
-            Testing box
+            <div class="card-setting">
+                <h3>color</h3>
+                <ul class="colors-list">
+                    <li class="active" data-color="#ff5e09"></li>
+                    <li data-color="#E91E63"></li>
+                    <li data-color="#009688"></li>
+                    <li data-color="#03a9f4"></li>
+                    <li data-color="#4caf50"></li>
+                </ul>
+            </div>
+            <div class="card-setting">
+                <h3>Random background</h3>
+                <div class="random-backgrounds">
+                    <span class="yes active" data-background="yes">Yes</span>
+                    <span class="no" data-background="no">No</span>
+                </div>
+            </div>
+            <div class="card-setting ">
+                <h3>Show Bullets</h3>
+                <button>Yes</button>
+                <button>Non</button>
+            </div>
         </div>
 
     </div>

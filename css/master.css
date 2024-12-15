@@ -1,6 +1,9 @@
 :root{
     --main-color:#ff5e09;
 }
+*{
+    box-sizing: border-box;
+}
 body{
     font-family: "Open Sans", sans-serif;
 }
@@ -14,20 +17,96 @@ body{
     left: -200px;
     transition: 0.3s;
 }
-.open{
+.setting-box.open{
     left: 0;
 }
-.setting-box .fa-gear{
+.setting-box .setting-toglle{
     position: absolute;
     right: -30px;
     top: 100px;
     background-color: #fff;
-    padding: 8px 0;
-    width: 30px;
     text-align: center;
     cursor: pointer;
 }
+.setting-box .setting-toglle .fa-gear{
+    padding: 8px 0;
+    width: 30px;
+}
 .setting-box .setting-content{
+    
+}
+.setting-box .setting-content .card-setting{
+    padding: 10px;
+    margin: 10px;
+    background-color: #eee;
+    text-align: center;
+}
+.setting-box .setting-content .card-setting h3{
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+.setting-box .setting-content .colors-list{
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 10px 0 0;
+}
+.setting-box .setting-content ul li{
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    background-color: red;
+    border-radius: 50%;
+    opacity: .5;
+    display: inline-block;
+    border: 3px solid #eee;
+
+}
+.setting-box .setting-content ul li.active{
+    opacity: 1;
+    border-color: #fff;
+
+}
+.setting-box .setting-content ul li:first-child{
+    background-color: #ff5e09;
+}
+.setting-box .setting-content ul li:nth-child(2){
+    background-color: #E91E63;
+}   
+.setting-box .setting-content ul li:nth-child(3){
+    background-color: #009688;
+}
+.setting-box .setting-content ul li:nth-child(4){
+    background-color: #03a9f4;
+}
+.setting-box .setting-content ul li:nth-child(5){
+    background-color: #4caf50;
+}
+.setting-box .setting-content .yes,
+.setting-box .setting-content .no{
+    display: inline-block;
+    width: 50px;
+    background-color: var(--main-color);
+    border-radius: 4px;
+    margin-top: 10px;
+    padding: 5px 10px;
+    padding: 4px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    opacity: .5;
+    cursor: pointer;
+
+}
+.setting-box .random-backgrounds span.active{
+    opacity: 1;
+    /* background: red; */
+}
+.setting-box .random-backgrounds .yes {
+    
+}
+.setting-box .random-backgrounds .no {
 
 }
 /* landing pages */
@@ -92,7 +171,7 @@ body{
     transform: translate(-50%, -50%);
     z-index: 3;
     color: white;
-    /* width: 100%; */
+    width: 100%;
     text-align: center;
 }
 .landing-page .introduction-text h1{
