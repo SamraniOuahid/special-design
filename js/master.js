@@ -56,7 +56,7 @@ faGear.onclick = ()=>{
 
 // switch colors
 const colorLi = document.querySelectorAll('.colors-list li')
-// loop on all list items
+// loop on all list items of
 colorLi.forEach(li =>{
     // click on every list items
     li.addEventListener("click", (e) => {
