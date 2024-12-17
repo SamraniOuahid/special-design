@@ -1,6 +1,7 @@
 // check if local storage color is empty
 // localStorage.removeItem("color_option")
 let mainColors = localStorage.getItem("color_option")  
+
 if(mainColors!==null){
     // console.log("local storage is not empty can you set it on root item")
     document.documentElement.style.setProperty('--main-color', mainColors)
@@ -11,6 +12,36 @@ if(mainColors!==null){
             element.classList.add("active")
         }
     })
+}
+
+// Random bg option
+let backOption = true;
+// controle the intervale
+let backInterval;
+// check if there's local storage random background item
+let backLocalItem = localStorage.getItem("background_option")
+
+// ********************
+if(backLocalItem !==null ){
+    // console.log("local storage is not empty can you set it on root item")
+    if(backLocalItem === 'true'){
+        backOption = true;
+    }else{
+        backOption = false;
+    }
+    document.querySelectorAll(".random-backgrounds span").forEach(e =>{
+        e.classList.remove("active")
+       
+    });
+
+    if(backLocalItem === 'true'){
+        document.querySelector(".random-backgrounds .yes").classList.add("active")
+    }else{
+        document.querySelector(".random-backgrounds .no").classList.add("active")
+
+    }
+    console.log(backLocalItem)
+    
 }
 // select setting
 let settingBox = document.querySelector('.setting-box')
@@ -62,13 +93,16 @@ RandomBackEl.forEach(span =>{
 
             // if value of random bg
             if(e.target.dataset.background === 'yes'){
-                console.log('yes');
+                // console.log('yes');
                 backOption = true;
-                setInterval(backInterval);
+                randomImg();
+                localStorage.setItem("background_option", true)
             }else{
-                console.log('no')
+                // console.log('no')
                 backOption = false;
                 clearInterval(backInterval);
+                localStorage.setItem("background_option", false)
+
 
             }
         })
@@ -84,11 +118,6 @@ let landingPage = document.querySelector('.landing-page')
 // get array of imgs 
 let imgArray = ["b1.jpg","b2.jpg","b3.jpg","b4.jpg","01.jpg"]
 
-// Random bg option
-let backOption = true;
-
-// controle the intervale
-let backInterval;
 
 // fct to randomize imgs
 
@@ -100,7 +129,7 @@ let randomImg = ()=>{
                 let randomNumber = Math.floor(Math.random() * imgArray.length)
                 // change bg imgs url
                 landingPage.style.backgroundImage = `url('imgs/${imgArray[randomNumber]}')`;
-            },4000 )
+            },500 )
     }
 }
 
