@@ -53,8 +53,10 @@ faGear.onclick = ()=>{
     faGear.classList.toggle('fa-spin')   
     
 }
-
+// ******************
 // switch colors
+let img_bg = document.querySelector('.img-bg')
+img_bg.src = '../imgs/blue.jpg';
 const colorLi = document.querySelectorAll('.colors-list li')
 // loop on all list items of
 colorLi.forEach(li =>{
@@ -65,6 +67,37 @@ colorLi.forEach(li =>{
 
         // set color on root
         document.documentElement.style.setProperty('--main-color', colorClicked)
+        console.log(colorClicked)
+        // get img bg
+        let img_bg = document.querySelector('.img-bg')
+        img_bg.src = '../imgs/blue.jpg';
+        switch(colorClicked){
+            // orange
+            case '#ff5e09':
+            img_bg.src = '../imgs/orange.png';
+            break;
+            // violet
+            case '#E91E63':
+            img_bg.src = '../imgs/violet.png';
+            break;
+            // green f
+            case '#009688':
+            img_bg.src = '../imgs/green_f.png';
+            break;
+            // blue
+            case '#ff5e09':
+            img_bg.src = '../imgs/blue.jpg';
+            break;
+            case '#4caf50':
+            img_bg.src = '../imgs/green.png';
+            break;
+            default:
+                img_bg.src = '../imgs/blue.jpg';
+
+        }
+        
+        
+        
 
         // set color on local storage
         localStorage.setItem("color_option",colorClicked)
@@ -114,7 +147,7 @@ RandomBackEl.forEach(span =>{
 
 // select landing page element
 let landingPage = document.querySelector('.landing-page')
-
+console.log(landingPage)
 // get array of imgs 
 let imgArray = ["b1.jpg","b2.jpg","b3.jpg","b4.jpg","01.jpg"]
 
@@ -129,6 +162,7 @@ let randomImg = ()=>{
                 let randomNumber = Math.floor(Math.random() * imgArray.length)
                 // change bg imgs url
                 landingPage.style.backgroundImage = `url('imgs/${imgArray[randomNumber]}')`;
+                
             },6000 )
     }
 }
