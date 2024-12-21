@@ -129,7 +129,7 @@ let randomImg = ()=>{
                 let randomNumber = Math.floor(Math.random() * imgArray.length)
                 // change bg imgs url
                 landingPage.style.backgroundImage = `url('imgs/${imgArray[randomNumber]}')`;
-            },500 )
+            },6000 )
     }
 }
 

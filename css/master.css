@@ -4,6 +4,12 @@
 *{
     box-sizing: border-box;
 }
+.container{
+    width: 1170px;
+    padding: 0 15px;
+    margin: auto;
+
+}
 body{
     font-family: "Open Sans", sans-serif;
 }
@@ -192,4 +198,30 @@ body{
 .landing-page .introduction-text p{
     line-height: 1.5;
     font-size: 17px;
+}
+/* about us */
+.about-us{
+    padding: 50px 0;
+    display: flex;
+}
+.about-us .info-box{
+    flex: 1;
+    padding: 30px;
+}
+.about-us .info-box h2{
+    font-weight: bold;
+    color: var(--main-color);
+    font-size: 30px; 
+    margin-bottom: 10px;
+}
+.about-us .info-box p{
+    line-height: 1.8;
+    color: #767676;
+}
+.about-us .image-box{
+    flex: 1;
+    text-align: center;
+}
+.about-us .image-box img{
+    width: 250px;
 }
