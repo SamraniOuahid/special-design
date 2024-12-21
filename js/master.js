@@ -168,3 +168,29 @@ let randomImg = ()=>{
 }
 
 randomImg()
+
+
+/* select skill  */
+let ourskills = document.querySelector('.skills')
+window.onscroll = ()=> {
+    // skill Offset top
+    let skillOffsetTop = ourskills.offsetTop;
+
+    // let skillOuterHeigh 
+    let skillOuterHeigh = ourskills.offsetHeight;
+
+    // window height
+    let windowHeight = this.innerHeight;
+
+    // window scroll Top
+    let windowScrollTop = this.pageYOffset;
+    console.log(windowScrollTop)
+    if( windowScrollTop > (skillOffsetTop + skillOuterHeigh - windowHeight) ){
+        
+        let allSkills = document.querySelectorAll('.skill-box .skill-progress span')
+        allSkills.forEach(skill =>{
+            skill.style.width = skill.dataset.progress;
+            console.log(skill.style.width)
+        })
+    }
+}

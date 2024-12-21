@@ -1,11 +1,12 @@
 :root{
     --main-color:#ff5e09;
+    --padding:  50px 0;
 }
 *{
     box-sizing: border-box;
 }
 .container{
-    width: 1170px;
+    max-width: 1170px;
     padding: 0 15px;
     margin: auto;
 
@@ -201,7 +202,7 @@ body{
 }
 /* about us */
 .about-us{
-    padding: 50px 0;
+    padding: var(--padding);
     display: flex;
 }
 .about-us .info-box{
@@ -225,3 +226,49 @@ body{
 .about-us .image-box img{
     width: 250px;
 }
+
+/* skills */
+.skills{
+    padding:  var(--padding);
+    background-color: #eee;
+}
+.skills .container h2{
+    font-weight: bold;
+    color: var(--main-color);
+    font-size: 30px; 
+    margin-bottom: 50px;
+    text-align: center;
+}
+.skills .container .skill-box{
+    display: flex;
+    background-color: #fff;
+    padding: 15px;
+    margin: 15px;
+}
+.skills .container .skill-box .skill-name{
+    font-weight: bold;
+    width: 140px;
+    text-align: center;
+    line-height: 30px;
+}
+.skills .container .skill-box .skill-progress{
+    border-radius: 6px;
+    background-color: #f4f4f4;
+    height: 30px;
+    width: calc(100% - 150px);
+    position: relative;
+    overflow: hidden;
+}
+.skills .container .skill-box .skill-progress span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 0;
+    display: block;
+    background-color: var(--main-color);
+    transition: all .5s;
+}
+
+
+
