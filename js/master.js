@@ -171,26 +171,60 @@ randomImg()
 
 
 /* select skill  */
-let ourskills = document.querySelector('.skills')
-window.onscroll = ()=> {
-    // skill Offset top
-    let skillOffsetTop = ourskills.offsetTop;
 
-    // let skillOuterHeigh 
-    let skillOuterHeigh = ourskills.offsetHeight;
+let ourSkills = document.querySelector(".skills");
 
-    // window height
-    let windowHeight = this.innerHeight;
+window.onscroll = function () {
 
-    // window scroll Top
-    let windowScrollTop = this.pageYOffset;
-    console.log(windowScrollTop)
-    if( windowScrollTop > (skillOffsetTop + skillOuterHeigh - windowHeight) ){
-        
-        let allSkills = document.querySelectorAll('.skill-box .skill-progress span')
-        allSkills.forEach(skill =>{
-            skill.style.width = skill.dataset.progress;
-            console.log(skill.style.width)
-        })
-    }
-}
+  // Skills Offset Top
+  let skillsOffsetTop = ourSkills.offsetTop;
+
+  // Skills Outer Height
+  let skillsOuterHeight = ourSkills.offsetHeight;
+
+  // Window Height
+  let windowHeight = this.innerHeight;
+
+  // Window ScrollTop
+  let windowScrollTop = this.pageYOffset;
+
+  if (windowScrollTop > (skillsOffsetTop + skillsOuterHeight - windowHeight)) {
+
+    let allSkills = document.querySelectorAll(".skill-box .skill-progress span");
+
+    allSkills.forEach(skill => {
+
+      skill.style.width = skill.dataset.progress;
+
+    });
+
+  }
+
+};
+
+
+// create popup with the image
+let ourGallery = document.querySelectorAll(".gallery img");
+
+ourGallery.forEach(img => {
+    img.addEventListener("click", (e)=>{
+        // create overly element
+        let overlay = document.createElement('div');
+        // add class to overlay
+        overlay.className = 'popup-overlay';
+        // append to body
+        document.body.appendChild(overlay)
+        // create the popup box
+        let popupBox = document.createElement("div");
+        // add class of the popup-Box
+        popupBox.className = "popup-Box";
+        // create the Imagas
+        let imageBox = document.createElement("img");
+        // set image source
+        imageBox.src = img.src
+        // append image in popup
+        popupBox.appendChild(imageBox)
+        // append popup in body
+        document.body.appendChild(popupBox)
+    })
+});
