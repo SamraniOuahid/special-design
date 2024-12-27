@@ -314,6 +314,15 @@ body{
     z-index: 1001;
     
 }
+.popup-Box h3{
+    text-align: center;
+    margin: 0 0 21px;
+    font-weight: bold;
+    color: var(--main-color);
+}
+.popup-Box span{
+
+}
 .popup-Box img{
     /* max-width: 100%; */
     width: 500px;

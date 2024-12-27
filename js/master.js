@@ -218,13 +218,41 @@ ourGallery.forEach(img => {
         let popupBox = document.createElement("div");
         // add class of the popup-Box
         popupBox.className = "popup-Box";
+
+        // alt of image
+        alt = img.alt 
+        if(alt !== null){
+            // crate heading
+            let imgHeading = document.createElement('h3')
+            // Create text for heading
+            let imgText = document.createTextNode(alt)
+            // append the text to heading
+            imgHeading.appendChild(imgText)
+            // appen the heading to popup-box
+            popupBox.appendChild(imgHeading)
+             
+        }
+
         // create the Imagas
         let imageBox = document.createElement("img");
-        // set image source
+       // set image source
         imageBox.src = img.src
         // append image in popup
         popupBox.appendChild(imageBox)
         // append popup in body
         document.body.appendChild(popupBox)
+
+        // creat the close span
+        let closeButton = document.createElement('span')
+        // creat the close button text
+        let closeButtonText = document.createTextNode('X')
+        // append the text to close button
+        closeButton.appendChild(closeButtonText)
+        // add class to close btn
+        closeButton.className = 'close-button'
+        // append the close button to popub
+        popupBox.appendChild(closeButton)
+        // close
+        // closeButton.onclose()
     })
 });
