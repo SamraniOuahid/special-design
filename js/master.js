@@ -40,7 +40,6 @@ if(backLocalItem !==null ){
         document.querySelector(".random-backgrounds .no").classList.add("active")
 
     }
-    console.log(backLocalItem)
     
 }
 // select setting
@@ -67,7 +66,6 @@ colorLi.forEach(li =>{
 
         // set color on root
         document.documentElement.style.setProperty('--main-color', colorClicked)
-        console.log(colorClicked)
         // get img bg
         let img_bg = document.querySelector('.img-bg')
         img_bg.src = '../imgs/blue.jpg';
@@ -147,7 +145,6 @@ RandomBackEl.forEach(span =>{
 
 // select landing page element
 let landingPage = document.querySelector('.landing-page')
-console.log(landingPage)
 // get array of imgs 
 let imgArray = ["b1.jpg","b2.jpg","b3.jpg","b4.jpg","01.jpg"]
 
@@ -256,3 +253,14 @@ ourGallery.forEach(img => {
         // closeButton.onclose()
     })
 });
+
+// close the popup
+document.addEventListener('click', e=>{
+    if(e.target.className == 'close-button'){
+        
+        e.target.parentNode.remove();
+        document.querySelector('.popup-overlay').remove()
+
+    }
+
+})
