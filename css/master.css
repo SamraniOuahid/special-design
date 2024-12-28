@@ -343,3 +343,62 @@ body{
     /* max-width: 100%; */
     width: 500px;
 }
+
+/* time line */
+.timeline{
+    padding: var(--padding);
+    background-color: #eee;
+}
+
+.timeline .timeline-content{
+    position: relative;
+    overflow: hidden;
+}
+.timeline .timeline-content::before{
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 2px;
+    background-color: var(--main-color);
+    left: 50%;
+    margin-left: 1px;
+    top: 0;
+}
+.timeline .timeline-content .year{
+    position: relative;
+    width: 50px;
+    text-align: center;
+    background-color: var(--main-color);
+    margin: 20px auto;
+    padding: 2px 5px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+} 
+.timeline .timeline-content .left,
+.timeline .timeline-content .right{
+    width: calc(50% - 25px);
+    margin-bottom: 40px;
+    position: relative;
+}
+.timeline .timeline-content .left{
+    float: left;
+}
+.timeline .timeline-content .right{
+    float: right;
+}
+.timeline  .timeline-content  .content{
+    background-color: #fff;
+    padding: 20px;
+
+}
+.timeline .timeline-content .content h3{
+    color: var(--main-color);
+    margin: 0 0 10px;
+    font-weight: bold;
+}
+.timeline .timeline-content  .content p{
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
