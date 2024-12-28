@@ -361,7 +361,7 @@ body{
     width: 2px;
     background-color: var(--main-color);
     left: 50%;
-    margin-left: 1px;
+    margin-left: -1px;
     top: 0;
 }
 .timeline .timeline-content .year{
@@ -384,8 +384,41 @@ body{
 .timeline .timeline-content .left{
     float: left;
 }
+.timeline .timeline-content .left::before{
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    border: 3px solid var(--main-color);
+    right: -35px;
+    top: 20px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+
+}
+.timeline .timeline-content .left::after{
+    position: absolute;
+    /* content: ''; */
+    border-style: solid;
+    border-width: 15px;
+    border-color: transparent transparent transparent white;
+    right: -27px;
+    top: 12px;
+}
 .timeline .timeline-content .right{
     float: right;
+}
+.timeline .timeline-content .right:before{
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    border: 3px solid var(--main-color);
+    left: -35px;
+    top: 20px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+
 }
 .timeline  .timeline-content  .content{
     background-color: #fff;
