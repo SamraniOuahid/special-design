@@ -377,7 +377,7 @@ body{
 } 
 .timeline .timeline-content .left,
 .timeline .timeline-content .right{
-    width: calc(50% - 25px);
+    width: calc(50% - 26px);
     margin-bottom: 40px;
     position: relative;
 }
@@ -385,6 +385,16 @@ body{
     float: left;
 }
 .timeline .timeline-content .left::before{
+    right: -36px;   
+}
+.timeline .timeline-content .right{
+    float: right;
+}
+.timeline .timeline-content .right::before{
+    left: -36px;   
+}
+.timeline .timeline-content .left::before,
+.timeline .timeline-content .right::before{
     content: '';
     position: absolute;
     background-color: #fff;
@@ -394,32 +404,32 @@ body{
     width: 14px;
     height: 14px;
     border-radius: 50%;
-
 }
+.clearfix{
+    clear: both;
+}
+
 .timeline .timeline-content .left::after{
     position: absolute;
-    /* content: ''; */
+    content: '';
     border-style: solid;
     border-width: 15px;
     border-color: transparent transparent transparent white;
     right: -27px;
-    top: 12px;
+    top: 15px;
 }
-.timeline .timeline-content .right{
-    float: right;
-}
-.timeline .timeline-content .right:before{
-    content: '';
+.timeline .timeline-content .right::after{
     position: absolute;
-    background-color: #fff;
-    border: 3px solid var(--main-color);
-    left: -35px;
-    top: 20px;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-
+    content: '';
+    border-style: solid;
+    border-width: 15px;
+    border-color: transparent white transparent transparent;
+    left: -27px;
+    height: 0;
+    width: 0;
+    top: 15px;
 }
+
 .timeline  .timeline-content  .content{
     background-color: #fff;
     padding: 20px;
@@ -434,4 +444,48 @@ body{
     color: #666;
     line-height: 1.6;
     margin: 0;
+}
+
+/* features */
+.features{
+    padding: var(--padding);
+
+}
+.features h2{
+    font-weight: bold;
+    color: var(--main-color);
+    font-size: 30px; 
+    margin-bottom: 50px;
+    text-align: center;
+}
+.features .feat-box{
+    width: calc(100% / 3);
+    float: left;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.features .feat-box img{
+    width: 128px;
+}
+.features .feat-box h4{
+    font-weight: bold;
+    font-size: 22px;
+    margin: 15px 0 40px;
+    position: relative;
+}
+.features .feat-box h4::before{
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    background-color: var(--main-color);
+    left: 50%;
+    margin-left: -20px;
+    bottom: -20px;
+}
+.features .feat-box p{
+    line-height: 1.7;
+    color: #666;
+    margin: 0 auto;
+    width: 80%;
 }
