@@ -489,3 +489,55 @@ body{
     margin: 0 auto;
     width: 80%;
 }
+
+/* testimonials */
+.testimonials{
+    min-height: 600px;
+    position: relative;
+    padding: var(--padding);
+}
+.testimonials::before{
+    content: '';
+    position: absolute;
+    width: 50%;
+    background-color: var(--main-color);
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+.testimonials::after{
+    content: '';
+    position: absolute;
+    width: 50%;
+    background-color: #333;
+    right: 0;
+    top: 0;
+    height: 100%;
+
+}
+.testimonials h2{
+    font-weight: bold;
+    color: #fff;
+    font-size: 30px; 
+    margin: 0 0 30px;
+    text-align: left;
+    z-index: 2;
+    position: relative;
+}
+.testimonials .ts-box{
+    width: calc(98% / 3);
+    float: left;
+    position: relative;
+    z-index: 2;
+    background-color: #fff;
+    padding: 20px;
+    font-size: 20px;
+}
+.testimonials .ts-box:not(:last-of-type){
+    margin-right: 1%;
+}
+.testimonials .ts-box{
+    position: relative;
+    z-index: 2;
+}
