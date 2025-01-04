@@ -268,4 +268,12 @@ document.addEventListener('click', e=>{
 
 // select all Bullets
 const allBullets = document.querySelectorAll('.nav-bullets .bullet');
-console.log(allBullets);
+
+allBullets.forEach(bullet =>{
+    bullet.addEventListener("click",(e)=>{
+        document.querySelector(e.target.dataset.section).scrollIntoView({
+            behavior:'smooth'
+        });
+
+    });
+});
