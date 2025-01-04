@@ -264,3 +264,8 @@ document.addEventListener('click', e=>{
     }
 
 })
+
+
+// select all Bullets
+const allBullets = document.querySelectorAll('.nav-bullets .bullet');
+console.log(allBullets);
