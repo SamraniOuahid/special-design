@@ -268,12 +268,28 @@ document.addEventListener('click', e=>{
 
 // select all Bullets
 const allBullets = document.querySelectorAll('.nav-bullets .bullet');
+const allLinks = document.querySelectorAll('.header-area a');
+console.log(allLinks);
 
-allBullets.forEach(bullet =>{
-    bullet.addEventListener("click",(e)=>{
-        document.querySelector(e.target.dataset.section).scrollIntoView({
-            behavior:'smooth'
+// allBullets.forEach(bullet =>{
+//     bullet.addEventListener("click",(e)=>{
+//         document.querySelector(e.target.dataset.section).scrollIntoView({
+//             behavior:'smooth'
+//         });
+
+//     });
+// });
+
+const scrollTo = (element)=>{
+    element.forEach(ele =>{
+        ele.addEventListener("click",(e)=>{
+            e.preventDefault();
+            document.querySelector(e.target.dataset.section).scrollIntoView({
+                behavior:'smooth'
+            });
+    
         });
-
     });
-});
+}
+scrollTo(allBullets)
+scrollTo(allLinks)
