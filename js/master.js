@@ -100,12 +100,7 @@ colorLi.forEach(li =>{
         // set color on local storage
         localStorage.setItem("color_option",colorClicked)
 
-        // remove active class for all children
-        e.target.parentElement.querySelectorAll(".active").forEach(element=>{
-            element.classList.remove("active")
-        })
-        // add active class on self
-        e.target.classList.add("active")
+       handlActive(e)
     })
 })
 // ***************
@@ -121,7 +116,8 @@ RandomBackEl.forEach(span =>{
         // remove active class for all children
         e.target.parentElement.querySelectorAll(".active").forEach(element=>{
             element.classList.remove("active")
-
+            // add active class on self
+            e.target.classList.add("active")
             // if value of random bg
             if(e.target.dataset.background === 'yes'){
                 // console.log('yes');
@@ -137,8 +133,7 @@ RandomBackEl.forEach(span =>{
 
             }
         })
-        // add active class on self
-        e.target.classList.add("active")
+       
         
     })
 })
@@ -293,3 +288,13 @@ const scrollTo = (element)=>{
 }
 scrollTo(allBullets)
 scrollTo(allLinks)
+
+
+let handlActive = (ev) => {
+    // remove active class for all children
+    ev.target.parentElement.querySelectorAll(".active").forEach(element=>{
+        element.classList.remove("active")
+    })
+    // add active class on self
+    ev.target.classList.add("active")
+}
